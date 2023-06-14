@@ -60,9 +60,9 @@ c_label.grid(row=1)
 # create Buttons Copy which will copy
 # password to clipboard and Generate
 # which will generate the password
-copy_button = Button(root, text="Copy", command=copy1)
+copy_button = Button(root, text="Copy", command=copy_password)
 copy_button.grid(row=0, column=2)
-generate_button = Button(root, text="Generate", command=generate)
+generate_button = Button(root, text="Generate", command=generate_password)
 generate_button.grid(row=0, column=3)
  
 # Radio Buttons 
