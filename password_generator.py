@@ -6,7 +6,7 @@ from tkinter.ttk import *
 def low():
     entry.delete(0, END)
 
-    length = var1.get
+    length = var1.get()
 
     lower = "abcdefghijklmnopqrstuvwxyz"
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -17,28 +17,30 @@ def low():
     if var.get() == 1:
         for i in range(0, length):
             password = password + random.choice(lower)
-            return password
+        return password
         
     # Generate medium strength password
-    elif var.get == 0:
-        for i in range(0, upper):
+    elif var.get() == 0:
+        for i in range(0, length):
             password = password + random.choice(upper)
-            return password
+        return password
         
     # Generate strong password
-    elif var.get == 3:
-        for i in range(0, chars):
+    elif var.get() == 3:
+        for i in range(0, length):
             password = password + random.choice(chars)
-            return password
+        return password
     else:
         print("Please choose and option.")
 
+# Generates password
 def generate_password():
-    generated_password = low()
-    entry.insert(10, generate_password)
+    password1 = low()
+    entry.insert(10, password1)
 
+# Copies password to clipboard
 def copy_password():
-    random_password = entry.get
+    random_password = entry.get()
     pyperclip.copy(random_password)
 
 
@@ -51,13 +53,13 @@ var1 = IntVar()
 root.title("Andrew's Password Generator")
  
 # Create label and entry to show password generated
-Random_password = Label(root, text="Password")
+Random_password = Label(root, text="Password:")
 Random_password.grid(row=0)
 entry = Entry(root)
 entry.grid(row=0, column=1)
  
 # Create label for length of password
-c_label = Label(root, text="Length")
+c_label = Label(root, text="Length:")
 c_label.grid(row=1)
  
 # Create copy and generate buttons
