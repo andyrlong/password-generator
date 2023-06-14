@@ -6,7 +6,7 @@ from tkinter.ttk import *
 def low():
     entry.delete(0, END)
 
-    length = var1.get
+    length = var.get
 
     lower = "abcdefghijklmnopqrstuvwxyz"
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
