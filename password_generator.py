@@ -6,22 +6,26 @@ from tkinter.ttk import *
 def low():
     entry.delete(0, END)
 
-    length = var.get
+    length = var1.get
 
     lower = "abcdefghijklmnopqrstuvwxyz"
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !@#$%^&*()"
     password = ""
 
+    # Generate low strength password
     if var.get() == 1:
         for i in range(0, length):
             password = password + random.choice(lower)
             return password
-
+        
+    # Generate medium strength password
     elif var.get == 0:
         for i in range(0, upper):
             password = password + random.choice(upper)
             return password
+        
+    # Generate strong password
     elif var.get == 3:
         for i in range(0, chars):
             password = password + random.choice(chars)
@@ -46,8 +50,7 @@ var1 = IntVar()
 # Title 
 root.title("Andrew's Password Generator")
  
-# Create label and entry to show
-# Password generated
+# Create label and entry to show password generated
 Random_password = Label(root, text="Password")
 Random_password.grid(row=0)
 entry = Entry(root)
@@ -57,9 +60,7 @@ entry.grid(row=0, column=1)
 c_label = Label(root, text="Length")
 c_label.grid(row=1)
  
-# create Buttons Copy which will copy
-# password to clipboard and Generate
-# which will generate the password
+# Create copy and generate buttons
 copy_button = Button(root, text="Copy", command=copy_password)
 copy_button.grid(row=0, column=2)
 generate_button = Button(root, text="Generate", command=generate_password)
